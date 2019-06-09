@@ -6,7 +6,8 @@ import java.util.Map;
 
 /**
  * @ClassName NO10
- * @Description TODO
+ * @Description 给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle
+ *              字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。
  * @Author 11432
  * @DATE 2019/6/9 9:34
  */
@@ -75,6 +76,8 @@ public class NO10 {
                 }
                 // 因为[0,i-1]的前缀子串与后缀子串相同，因此找到 该前缀子串 的最大可匹配前缀子串S，S的最大前缀子串和最大后缀子串，就一定是S
                 // 所对应的后缀子串S'的最大前缀子串和最大后缀子串，即S的最大前缀子串和S'的最大后缀子串就是次长可匹配前缀和后缀子串。
+                /** S-1 不一定和 S'-1 匹配，因此应该求次长可匹配前缀子串。
+                 * 即：最长可匹配前缀子串 的 最长可匹配前缀子串 就是次长可匹配前缀子串 */
                 lastIndex = maxSubprefix[lastIndex + 1];
             }
             if (i - 1 != lastIndex + 1 && target[lastIndex + 1] == target[i - 1]){
@@ -100,6 +103,7 @@ public class NO10 {
         char[] targetChars = target.toCharArray();
         int badIndex;
         int targetSize = targetChars.length;
+        //已匹配的字符串长度
         int reStartT = 0;
         int moveLength;
         //获取所有最大可匹配前缀子串  失效函数
