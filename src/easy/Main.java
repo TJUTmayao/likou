@@ -1,5 +1,7 @@
 package easy;
 
+import java.util.ArrayList;
+
 /**
  * @ClassName Main
  * @Description TODO
@@ -8,6 +10,11 @@ package easy;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Math.sqrt(2147483647));
+        ArrayList<Integer> integers = new ArrayList<>();
+        integers.add(22);
+        for (int i = 1; i < 4; i++) {
+            integers.add(integers.size() - 1,i);
+        }
+        integers.forEach(aInt -> System.out.println(aInt));
     }
 }
