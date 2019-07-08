@@ -1,6 +1,7 @@
 package easy;
 
 import org.omg.PortableInterceptor.INACTIVE;
+import sun.security.krb5.internal.tools.Klist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,14 @@ import java.util.List;
  * @DATE 2019/7/7 12:54
  */
 public class NO29 {
+
+    public static void main(String[] args) {
+        NO29 no29 = new NO29();
+        List<List<Integer>> generate = no29.generate(10);
+        generate.forEach(list ->{
+            System.out.println(list);
+        });
+    }
 
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> lists = new ArrayList<>(numRows);
