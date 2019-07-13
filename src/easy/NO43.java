@@ -11,6 +11,11 @@ package easy;
  */
 public class NO43 {
 
+    public static void main(String[] args) {
+        rotate4(new int[]{1,2,3,4,5,6,7},3);
+        System.out.println();
+    }
+
     /** 暴力法，每次移动一步  */
     public void rotate(int[] nums, int k) {
         k = k % nums.length;
@@ -48,6 +53,7 @@ public class NO43 {
         }
     }
 
+    /** 翻转法 */
     public void rotate3(int[] nums, int k) {
         int x;
         k = k % nums.length;
@@ -69,5 +75,20 @@ public class NO43 {
             nums[i] = nums[j];
             nums[j] = x;
         }
+    }
+
+    /** 额外空间 */
+    public static void rotate4(int[] nums, int k) {
+        k = k % nums.length;
+        int[] newInts = new int[nums.length];
+        int m = k;
+        for (int i = 0; i < nums.length - k; i++) {
+            newInts[m++] = nums[i];
+        }
+        m = 0;
+        for (int i = nums.length - k; i < nums.length; i++) {
+            newInts[m++] = nums[i];
+        }
+        System.arraycopy(newInts,0,nums,0,nums.length);
     }
 }
