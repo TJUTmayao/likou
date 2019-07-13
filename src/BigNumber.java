@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class BigNumber {
 
     public static void main(String[] args) {
-        System.out.println(getNthPower(2,4));
+        System.out.println(getFactorial(200));
     }
 
     /** 大数阶乘   思路：使用数组，每个元素只存结果的一位数 */
