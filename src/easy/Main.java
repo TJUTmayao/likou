@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 public class Main {
     private static final long _1M = 1024 * 1024;
+
+    private static char c;
     public static void main(String[] args) {
 //        ArrayList<Integer> integers = new ArrayList<>();
 //        integers.add(22);
@@ -54,6 +56,6 @@ public class Main {
 //        } catch (IllegalAccessException e) {
 //            e.printStackTrace();
 //        }
-        System.out.println('@' + 0);
+        System.out.println(c + 1 );
     }
 }
