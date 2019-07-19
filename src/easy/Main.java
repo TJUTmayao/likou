@@ -57,5 +57,6 @@ public class Main {
 //            e.printStackTrace();
 //        }
         System.out.println(c + 1 );
+        System.out.println();
     }
 }
