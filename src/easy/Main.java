@@ -56,7 +56,11 @@ public class Main {
 //        } catch (IllegalAccessException e) {
 //            e.printStackTrace();
 //        }
-        System.out.println(c + 1 );
-        System.out.println();
+        System.out.println(Integer.MAX_VALUE );
+        int s = 1;
+        for (int i = 0; i < 50; i++) {
+            s *= 4;
+            System.out.println(s);
+        }
     }
 }
