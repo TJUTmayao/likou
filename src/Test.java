@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * @ClassName Test
@@ -9,9 +10,6 @@ import java.util.Random;
 public class Test {
 
     public static void main(String[] args) {
-        Random random = new Random();
-        for (int i = 0; i < 100; i++) {
-            System.out.println(random.nextInt(10));
-        }
+        System.out.println((char)(Character.isLowerCase('A') ? 'A' - 32 : 'A' + 32));
     }
 }

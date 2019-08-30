@@ -1,5 +1,7 @@
 package easy;
 
+import java.util.HashSet;
+
 /**
  * @ClassName NO170
  * @Description 有一幅以二维整数数组表示的图画，每一个整数表示该图画的像素值大小，数值在 0 到 65535 之间。
@@ -24,36 +26,36 @@ public class NO170 {
         System.out.println();
     }
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
-        int[][] ints = new int[image.length][image[0].length];
-        digui(image,sr,sc,newColor,image[sr][sc],ints);
+        digui(image,sr,sc,newColor,image[sr][sc]);
         image[sr][sc] = newColor;
         return image;
     }
 
-    public void digui(int[][] image, int sr, int sc, int newColor,int oldColor,int[][] ints){
+    public void digui(int[][] image, int sr, int sc, int newColor,int oldColor){
+        if (newColor == oldColor){
+            return;
+        }
         // 上
         for (int i = sr + 1; i < image.length && image[i][sc] == oldColor; i++) {
-            change(image,i,sc,newColor,oldColor,ints);
+            change(image,i,sc,newColor,oldColor);
         }
         // 下
         for (int i = sr - 1; i >= 0 && image[i][sc] == oldColor; i--) {
-            change(image,i,sc,newColor,oldColor,ints);
+            change(image,i,sc,newColor,oldColor);
         }
         // 左
         for (int i = sc + 1; i < image[sr].length && image[sr][i] == oldColor; i++) {
-            change(image,sr,i,newColor,oldColor,ints);
+            change(image,sr,i,newColor,oldColor);
         }
         // 右
         for (int i = sc - 1; i >= 0 && image[sr][i] == oldColor; i--) {
-            change(image,sr,i,newColor,oldColor,ints);
+            change(image,sr,i,newColor,oldColor);
         }
     }
 
-    public void change(int[][] image,int x,int y,int newColor,int oldColor,int[][] ints){
-        if (ints[x][y] == 0){
-            image[x][y] = newColor;
-            ints[x][y] = 1;
-            digui(image,x,y,newColor,oldColor,ints);
-        }
+    public void change(int[][] image,int x,int y,int newColor,int oldColor){
+        image[x][y] = newColor;
+        digui(image,x,y,newColor,oldColor);
     }
+
 }

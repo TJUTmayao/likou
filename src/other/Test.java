@@ -8,6 +8,11 @@ package other;
  */
 public class Test {
     public static void main(String[] args) {
+        Test test = new Test();
+        test.test2();
+    }
+    /** 自动装箱、拆箱陷阱 */
+    public void test1(){
         Integer a = 1;
         Integer b = 2;
         Integer c = 3;
@@ -27,5 +32,29 @@ public class Test {
         System.out.println(g == (a + b));
         // equals方法先比较两者的类型，Long与Integer为不同类型
         System.out.println(g.equals(a + b));
+    }
+    /** codePoint测试 */
+    public void test2(){
+        String string = "a";
+        // 返回指定字符的编码值
+        int i = string.codePointAt(0);
+        System.out.println(i);
+        Character character = '汉';
+        // 返回指定字符数组的指定下标的字符的编码值
+        System.out.println(Character.codePointAt(new char[]{'a','v'},1,2));
+        // 获取指定编码值占几个 char（一个char的编码范围0~65535）
+        System.out.println(Character.charCount(65536));
+        // 是否是数字
+        System.out.println(Character.isDigit('*'));
+    }
+
+    public interface A{
+        int A = 0;
+        public final int B = 0;
+        public static int C =3;
+
+        public static Void V(){
+            return null;
+        }
     }
 }
