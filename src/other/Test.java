@@ -53,7 +53,7 @@ public class Test {
         public final int B = 0;
         public static int C =3;
 
-        public static Void V(){
+        public static <S> S V(){
             return null;
         }
     }
